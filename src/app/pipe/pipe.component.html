@@ -1,0 +1,18 @@
+
+<h2>Pipe Example</h2>
+
+<table  [ngClass]="'large'" [border]="1">
+  <tr>
+    <td>#</td>
+    <td>Name</td>
+    <td>Marks</td>
+    <td>Gender</td>
+  </tr>
+  <tr *ngFor="let s of students;let i=index" [ngClass]="s.marks <20 ? 'bkRed':''">
+    <td>{{i}}</td>
+    <td>{{ s.name | studentspipe : s.gender}}</td>
+    <td>{{s.gender}}</td>
+    <td>{{s.marks}}</td>
+  </tr>
+</table>
+

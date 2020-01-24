@@ -1,0 +1,20 @@
+<p>switch works!</p>
+
+
+<select (change)="ddlchagne($event)">
+    <option>Select</option>
+    <option value="1">one</option>
+    <option value="2">two</option>
+    <option value="3">three</option>
+</select>
+
+<div [ngSwitch]="number">
+<h2 *ngSwitchCase="'one'"> He's got One </h2> 
+<h2 *ngSwitchCase="'two'"> He's got two </h2> 
+<h2 *ngSwitchCase="'three'"> He's got three </h2> 
+<h2 *ngSwitchDefault> None</h2> 
+</div>
+
+<div [ngSwitch]="">
+
+</div>

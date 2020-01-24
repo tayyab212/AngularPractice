@@ -1,0 +1,99 @@
+<p>temlate-driven works!</p>
+
+<div class="container">
+    <div class="container-fluid">
+        <div class="row">
+            <form name="form" #regForm=ngForm (ngSubmit)="regForm.form.valid && userRegister(regForm)"
+                [PasswordMatch]="['password', 'cpassword']" novalidate>
+
+                <div class="form-group">
+                    <label>User Name </label>
+                    <input type="text" class="form-control" placeholder="User name" required="required" appUsernaem
+                        name="username" #uname="ngModel" ngModel
+                        [ngClass]="{'is-invalid':regForm.submitted && uname.invalid}"> <br />
+                    <div *ngIf="regForm.submitted && uname.invalid" class="invalid-feedback">
+                        <div *ngIf="uname.errors.required">Please enter username</div>
+                        <div *ngIf="uname.errors.UserNameValidator">this username is not available.</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label>First Name</label>
+                    <input type="text" placeholder="First Name" required ngModel name="fname" #fname='ngModel'
+                        class="form-control" [ngClass]="{'is-invalid':regForm.submitted && fname.invalid}"
+                        pattern="[a-zA-Z][a-zA-Z ]+">
+                    <div *ngIf="regForm.submitted && fname.invalid" class="invalid-feedback">
+                        <div *ngIf="fname.errors.required">Please enter first name.</div>
+                        <div *ngIf="fname.errors.pattern"> only alphabats are allowed.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Last Name</label>
+                    <input type="text" required class="form-control" placeholder="Last Name" name="lname" ngModel
+                        #lname="ngModel" [ngClass]="{'is-invalid':regForm.submitted && lname.invalid}">
+                    <div *ngIf="regForm.submitted && lname.invalid" class="invalid-feedback">
+                        <div *ngIf="lname.errors.required">Please enter last name.</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Email</label>
+                    <input type="text" required email class="form-control" placeholder="Email" appEmailvalidator
+                        name="email" #e="ngModel" ngModel [ngClass]="{'is-invalid':regForm.submitted && e.invalid}">
+                    <div *ngIf="regForm.submitted && e.invalid" class="invalid-feedback">
+                        <div *ngIf="e.errors.required">Please enter email </div>
+                        <div *ngIf="e.errors.email">Please enter the valid email address</div>
+                        <div *ngIf="!e.errors.email &&e.errors.emailvalidator"> Its seems like the email address is not
+                            resgistered.</div>
+
+                    </div>
+                </div>
+
+                <div class="form-group">
+
+                <label>Country</label>
+
+                    <select class="form-control" [ngClass]="{'is-invalid':regForm.submitted && country.invalid}" name="country" #country="ngModel" required ngModel>
+                        <option value="">Seletc</option>
+                        <option value="1">Pakistan</option>
+                        <option value="2">India</option>
+                    </select>
+
+                    <div class="invalid-feedback" *ngIf="regForm.submitted && country.invalid">Please select country</div>
+
+                    </div>
+
+                <div class="form-group">
+                    <label>Password </label>
+                    <input type="password" placeholder="Password" class="form-control" name="password" #pass='ngModel'
+                        ngModel required minlength="8" [ngClass]="{'is-invalid':regForm.submitted && pass.invalid}">
+                    <div *ngIf="regForm.submitted && pass.invalid" class="invalid-feedback">
+                        <div *ngIf="pass.errors.required">Please enter password</div>
+                        <div *ngIf="pass.errors.minlength">minlength is 8 characters</div>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label>Confirm Password</label>
+                    <input type="password" name="cpassword" #cpass="ngModel" ngModel placeholder="Confirm Password"
+                        required class="form-control" [ngClass]="{'is-invalid':regForm.submitted && cpass.invalid}">
+                    <div *ngIf="regForm.submitted && cpass.invalid" class="invalid-feedback">
+                        <div *ngIf="cpass.errors.required">Please enter confirm password</div>
+                        <div *ngIf="!cpass.errors.required  && cpass.errors.mustMatch">Password and Confirm Password
+                            should be same</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <input type="checkbox" required [ngClass]="{'is-invalid':regForm.submitted && tc.invalid}"
+                        name="Termsandconditions" #tc="ngModel" ngModel>Agree terms and
+                    conditions <br />
+                    <div *ngIf="regForm.submitted && tc.invalid" class="invalid-feedback">
+                        Please agree to terms and conditions
+                    </div>
+                </div>
+                <button type="submit" class="btn  btn-primary">Submit</button>
+            </form>
+
+        </div>
+    </div>
+</div>

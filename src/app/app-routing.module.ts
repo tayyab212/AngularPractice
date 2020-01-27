@@ -12,6 +12,7 @@ import { TemlateDrivenComponent } from './temlate-driven/temlate-driven.componen
 import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { combineLatest } from 'rxjs';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
+import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
 
 
 const routes: Routes = [
@@ -34,7 +35,7 @@ const routes: Routes = [
       {path:"" ,children:[
         {path:"",component:AngularFormsComponent},
         {path:"template_forms",component:TemlateDrivenComponent},
-        {path:"reactive_forms",component:ReactiveFormsComponent}
+        {path:"reactive_forms",component:ReactiveForms2Component}
       ]},
     ]}
   ]},

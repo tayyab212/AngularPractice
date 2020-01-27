@@ -16,12 +16,14 @@ import { ServiceComponent } from './service/service.component';
 import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { TemlateDrivenComponent } from './temlate-driven/temlate-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import { CustomvalidationService } from './services/customvalidation.service';
 
 import { MustMatchDirectiveDirective } from './must-match-directive.directive';
 import { EmailvalidatorDirective  } from './email-validator.directive';
 import { UsernaemDirective } from './usernaem.directive';
+import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
+
 
 
 @NgModule({
@@ -41,12 +43,14 @@ import { UsernaemDirective } from './usernaem.directive';
     ReactiveFormsComponent,
     MustMatchDirectiveDirective,
     EmailvalidatorDirective,
-    UsernaemDirective 
+    UsernaemDirective,
+    ReactiveForms2Component 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UniServiceService,CustomvalidationService],
   bootstrap: [AppComponent]

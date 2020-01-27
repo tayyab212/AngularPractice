@@ -70,12 +70,22 @@
 
             <div class="form-group">
                 <label>Confirm Password</label>
-                <input type="password" formControlName="cpassword" class="form-control" [class.is-invalid]="regForm.errors?.check_password">
-                <small *ngIf="regForm.errors?.check_password" class="text-danger">Password and Confirm Password should be same.</small>
+                <input type="password" formControlName="cpassword" class="form-control"
+                    [class.is-invalid]="regForm.errors?.check_password">
+                <small *ngIf="regForm.errors?.check_password" class="text-danger">Password and Confirm Password should
+                    be same.</small>
             </div>
 
+            <div class="form-group">
+           <input type="checkbox" formControlName="tor" name="tor"
+                    [class.is-invalid]="regForm.get('tor').invalid"> Agree to terms and conditions 
+                <div class="text-danger" *ngIf="regForm.get('tor').invalid">
+                    <div *ngIf="regForm.get('tor').errors?.required" >Please agree to terms and
+                        conditions </div>
+                </div>
+            </div>
 
+            <button type="submit" class="btn btn-primary">Register</button>
         </form>
     </div>
-    <button type="submit" class="btn btn-primary">Register</button>
 </div>

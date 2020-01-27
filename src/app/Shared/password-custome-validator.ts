@@ -1,7 +1,7 @@
 import { AbstractControl } from "@angular/forms";
 
 export function passwordvalidator(control:AbstractControl) : {[key:string] :boolean} | null {
-debugger;
+
     const password = control.get('password').value;
     const confirmpassword  = control.get('cpassword').value;
 

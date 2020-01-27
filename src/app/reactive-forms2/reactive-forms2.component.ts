@@ -21,6 +21,7 @@ export class ReactiveForms2Component implements OnInit {
       country:["",Validators.required],
       password:["",Validators.required],
       cpassword:["",Validators.required],
+      tor: [false, Validators.requiredTrue]
     },{validators:passwordvalidator}  )
   }
 

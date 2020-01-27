@@ -24,6 +24,8 @@ import { EmailvalidatorDirective  } from './email-validator.directive';
 import { UsernaemDirective } from './usernaem.directive';
 import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
 import { HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './table/table.component';
+import { LoginComponent } from './login/login.component';
 
 
 
@@ -45,7 +47,9 @@ import { HttpClientModule } from '@angular/common/http';
     MustMatchDirectiveDirective,
     EmailvalidatorDirective,
     UsernaemDirective,
-    ReactiveForms2Component 
+    ReactiveForms2Component,
+    TableComponent,
+    LoginComponent 
   ],
   imports: [
     BrowserModule,

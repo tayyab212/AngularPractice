@@ -48,7 +48,4 @@ export class ReactiveForms2Component implements OnInit {
    addAlternateEmail() {
     this.alternateEmails.push(this.fb.control(''));
   }
-
-
-
 }

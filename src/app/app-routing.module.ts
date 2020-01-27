@@ -13,6 +13,8 @@ import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { combineLatest } from 'rxjs';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
 import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
+import { TableComponent } from './table/table.component';
+import { LoginComponent } from './login/login.component';
 
 
 const routes: Routes = [
@@ -31,6 +33,7 @@ const routes: Routes = [
     {path:"pipedemo",component:PipeComponent},
     {path:"switchdemo",component:SwitchComponent},
     {path:"uni_Service",component:ServiceComponent},
+    {path:"angular_table",component:TableComponent},
     {path:"angular_forms",children:[
       {path:"" ,children:[
         {path:"",component:AngularFormsComponent},
@@ -39,6 +42,7 @@ const routes: Routes = [
       ]},
     ]}
   ]},
+  {path:"login",component:LoginComponent}
 ];
 
 @NgModule({

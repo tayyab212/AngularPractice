@@ -23,6 +23,7 @@ import { MustMatchDirectiveDirective } from './must-match-directive.directive';
 import { EmailvalidatorDirective  } from './email-validator.directive';
 import { UsernaemDirective } from './usernaem.directive';
 import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
+import { HttpClientModule } from '@angular/common/http';
 
 
 
@@ -50,7 +51,8 @@ import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.compo
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [UniServiceService,CustomvalidationService],
   bootstrap: [AppComponent]

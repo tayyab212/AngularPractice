@@ -34,10 +34,11 @@ export class ReactiveForms2Component implements OnInit {
     debugger;
     this._register.register(this.regForm.value)
     .subscribe(
-      response => console.log("success",response),
+      response => console.log(`success  ${response}`),
       error=> console.log('error',error)
       );
-    console.log(Response);
+      alert("User Successfully Registered, Thank You.");
+      this.regForm.reset();
   }
 
   get alternateEmails(){

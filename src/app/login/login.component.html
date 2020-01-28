@@ -1,6 +1,10 @@
 <p>login works!</p>
 
-{{Valid}}
+
+<div  [ngClass]="alertClass()" role="alert">
+   <div *ngIf="Valid==0">Email or Password is incorrect.</div> 
+   <div *ngIf="Valid==1">Congratulations, Successfully login.</div> 
+  </div>
 <div class="container">
     <div class="container-fluid">
         <form [formGroup]="login" (ngSubmit)=(loginUser())>

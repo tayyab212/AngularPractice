@@ -8,7 +8,7 @@ import { FormGroup, FormBuilder, Validators } from '@angular/forms';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  Valid: boolean =false;
+  Valid: boolean;
   login: FormGroup;
 
   constructor(private _commonService: CommonService, private fb: FormBuilder) {
@@ -26,6 +26,10 @@ export class LoginComponent implements OnInit {
     debugger;
     this._commonService.login(this.login.value)
       .subscribe(data => this.Valid = data);
+  }
+
+  alertClass(){
+    return this.Valid  ?  "alert alert-primary" : "alert alert-danger" ;
   }
 
 }

@@ -15,6 +15,7 @@ import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.componen
 import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
 import { TableComponent } from './table/table.component';
 import { LoginComponent } from './login/login.component';
+import { UserComponent } from './Modules/User/usre/Component/user/user.component';
 
 
 const routes: Routes = [
@@ -40,9 +41,14 @@ const routes: Routes = [
         {path:"template_forms",component:TemlateDrivenComponent},
         {path:"reactive_forms",component:ReactiveForms2Component}
       ]},
-    ]}
+    ]},
+    {path:"User",loadChildren:'src/app/Modules/User/usre/usre.module#UsreModule'}
   ]},
-  {path:"login",component:LoginComponent}
+  {path:"login",component:LoginComponent},
+  {path:"eager",loadChildren:'src/app/ModuleExample/eagerloading/eagerloading.module#EagerloadingModule'},
+  {path:"person",loadChildren:'src/app/ModuleExample/person/person.module#PersonModule'},
+  //{path:"User",loadChildren:'src/app/Modules/User/usre/usre.module#UsreModule'},
+
 ];
 
 @NgModule({

@@ -26,7 +26,8 @@ import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.compo
 import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import { LoginComponent } from './login/login.component';
-import { EagerloadingModule } from './ModuleExample/eagerloading/eagerloading.module';
+//import { EagerloadingModule } from './ModuleExample/eagerloading/eagerloading.module';
+//import { PersonModule } from './ModuleExample/person/person.module';
 
 
 
@@ -59,10 +60,16 @@ import { EagerloadingModule } from './ModuleExample/eagerloading/eagerloading.mo
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule,
-    EagerloadingModule
+    HttpClientModule
+   // PersonModule,
+    //EagerloadingModule
   ],
   providers: [UniServiceService,CustomvalidationService],
   bootstrap: [AppComponent]
 })
-export class AppModule { }
+export class AppModule { 
+
+  constructor(){
+    console.log("App Module")
+  }
+}

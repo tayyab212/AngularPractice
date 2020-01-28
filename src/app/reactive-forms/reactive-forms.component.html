@@ -1,1 +1,104 @@
 <p>reactive-forms works!</p>
+
+<div class="container-fluid">
+    <div class="row">
+
+
+        <form [formGroup]="regForm" (ngSubmit)="regForm.valid && userRegistration(regForm)">
+
+            <div class="form-group">
+                <label>User Name</label>
+                <input type="text" [class.is-invalid]="getUserName.invalid && getUserName.touched"
+                    formControlName="uname" class="form-control" placeholder="User Name">
+                <div *ngIf="getUserName.invalid && getUserName.touched" class="invalid-feedback">
+                    <div *ngIf="getUserName.errors?.required">Please enter user name</div>
+                    <div *ngIf="getUserName.errors?.minlength">minlength is 3 characters.</div>
+                    <div *ngIf="getUserName.errors?.forbiddenUname">Its seems like the user name is already registered.
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>First Name</label>
+                <input type="text" [class.is-invalid]="getFirstName.invalid && getFirstName.touched"
+                    formControlName="fname" class="form-control" placeholder="First Name">
+
+                <div *ngIf="getFirstName.invalid && getFirstName.touched" class="invalid-feedback">
+                    <div *ngIf="getFirstName.errors?.required">Please enter First Name</div>
+                    <div *ngIf="getFirstName.errors?.minlength">minlength is 3 characters</div>
+                </div>
+                <div>
+
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Last Name</label>
+                <input type="text" [class.is-invalid]="getLastName.invalid && getLastName.touched"
+                    formControlName="lname" class="form-control" placeholder="Last Name">
+                <div *ngIf="getLastName.invalid && getLastName.touched" class="invalid-feedback">
+                    <div *ngIf="getLastName.errors?.required">Please enter Last Name</div>
+                    <div *ngIf="getLastName.errors?.minlength">minlength is 3 characters</div>
+                </div>
+
+            </div>
+
+            <div class="form-group">
+                <label>Email</label>
+                <input type="email" [class.is-invalid]="getUserEmai.invalid && getUserEmai.touched"
+                    formControlName="email" class="form-control" placeholder="Email">
+
+                <div *ngIf="getUserEmai.invalid && getUserEmai.touched" class="invalid-feedback">
+                    <div *ngIf="getUserEmai.errors?.required">Please enter email address.</div>
+                    <div *ngIf="getUserEmai.errors?.IsvalidEmail">email address is already registered.</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Country</label>
+                <select formControlName="country" [class.is-invalid]="getCountry.invalid && getCountry.touched"
+                    class="form-control">
+                    <option value="">Select</option>
+                    <option value="1">Pakistan</option>
+                    <option value="2">India</option>
+                </select>
+
+                <div *ngIf="getCountry.invalid && getCountry.touched" class="invalid-feedback">
+                    <div *ngIf="getCountry.errors?.required">Please select country</div>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label>Password</label>
+                <input type="password"
+                    [class.is-invalid]="regForm.get('password').invalid && regForm.get('password').touched"
+                    formControlName="password" class="form-control" placeholder="Password">
+                <div *ngIf="regForm.get('password').invalid && regForm.get('password').touched">
+                    <div *ngIf="regForm.get('password').errors?.required">pleaes enter password</div>
+                </div>
+            </div>
+
+
+            <div class="form-group">
+                <label>Confirm Password</label>
+                <input type="password" formControlName="cpassword" [class.is-invalid]=" regForm.get('cpassword').touched && regForm.errors?.misMatch" class="form-control" placeholder="Confirm Password">
+<div *ngIf="regForm.get('cpassword').invalid && regForm.get('cpassword').touched" class="invalid-feedback">
+
+<div *ngIf="regForm.get('cpassword').errors?.required">Please enter confirm password</div>
+<div *ngIf="regForm.errors?.misMatch">Password and confirm password should be same</div>
+
+</div>
+            </div>
+
+            <input type="checkbox" [class.is-invalid]="gettermsandcondition" formControlName="termsandcondition"> Agree
+            to terms and
+            conditions<br>
+            <div *ngIf="gettermsandcondition.invalid" class="invalid-feedback">
+                Please agree to terms and conditions
+            </div>
+
+            <button class="btn btn-primary" type="submit">Register</button> <br /><br />
+            <button class="btn btn-primary" (click)="loadUserData()">Load Api data</button>
+        </form>
+    </div>
+</div>

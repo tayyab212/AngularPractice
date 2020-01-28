@@ -22,7 +22,7 @@ import { CustomvalidationService } from './services/customvalidation.service';
 import { MustMatchDirectiveDirective } from './must-match-directive.directive';
 import { EmailvalidatorDirective  } from './email-validator.directive';
 import { UsernaemDirective } from './usernaem.directive';
-
+import {ReactiveFormsModule} from '@angular/forms'
 
 @NgModule({
   declarations: [
@@ -46,7 +46,8 @@ import { UsernaemDirective } from './usernaem.directive';
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    ReactiveFormsModule
   ],
   providers: [UniServiceService,CustomvalidationService],
   bootstrap: [AppComponent]

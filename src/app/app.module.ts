@@ -26,6 +26,9 @@ import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.compo
 import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import { LoginComponent } from './login/login.component';
+import { EagerloadingModule } from './ModuleExample/eagerloading/eagerloading.module';
+
+
 
 
 
@@ -49,14 +52,15 @@ import { LoginComponent } from './login/login.component';
     UsernaemDirective,
     ReactiveForms2Component,
     TableComponent,
-    LoginComponent 
+    LoginComponent,
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
     ReactiveFormsModule,
-    HttpClientModule
+    HttpClientModule,
+    EagerloadingModule
   ],
   providers: [UniServiceService,CustomvalidationService],
   bootstrap: [AppComponent]

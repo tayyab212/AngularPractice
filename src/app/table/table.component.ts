@@ -4,6 +4,7 @@ import { RegistrationService } from '../registration.service';
 import { CommonService } from '../common.service';
 import { Observable } from 'rxjs';
 import { IUser } from '../Interface/user';
+import { ThrowStmt } from '@angular/compiler';
 
 @Component({
   selector: 'app-table',
@@ -12,16 +13,27 @@ import { IUser } from '../Interface/user';
 })
 export class TableComponent implements OnInit {
 
-  public User : Observable<IUser[]>;
+  public Users : Observable<IUser[]>;
+  public User :IUser[];
+
   constructor(private _commonservice:CommonService) { }
 
   ngOnInit() {
     this.getAllUser();
+    //this.getUsera();
   }
 
   getAllUser() {
-     this.User=this._commonservice.getAllUser();
+     this.Users=this._commonservice.getAllUser();
   }
-  
+
+
+  getUsera(User){
+    debugger;
+ this._commonservice.getUser(User.id).subscribe(
+   data => {this.User = data},
+   error => {}
+ );
+  }
 
 }

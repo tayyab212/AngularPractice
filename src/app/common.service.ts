@@ -12,6 +12,8 @@ export class CommonService {
   _URL = "http://localhost:50038"
   _urlgetAllUsers = 'http://localhost:50038/api/Common/get_alluser';
   _urlLogin = 'http://localhost:50038/api/Common/login';
+  _urlget= 'http://localhost:50038/api/Common/get_user';
+
 
   constructor(private _http: HttpClient) {
   }
@@ -21,6 +23,17 @@ export class CommonService {
     return this._http.get<IUser[]>(this._urlgetAllUsers);
   }
 
+// getUser(Id){
+//   debugger
+//   Id=1;
+//     return this._http.get(this._urlget, {
+//       params: {
+//         Id: Id
+//       },
+//       observe: 'response'
+//     })
+//   }
+  
   login(user) {
 
     return this._http.post<any>(`${this._URL}/api/Common/login`, user).pipe(map(user => {
@@ -34,26 +47,16 @@ export class CommonService {
       }
 
     }));
+  }
 
+
+  getUser(Id):Observable<IUser[]>{
+    debugger;
+    return this._http.get<IUser[]>(this._urlget+"/"+Id);
   }
 
 
 
-
-  //   login(Email: string, password: string) {
-  //     debugger;
-  //     return this.http.post<any>(`${this._URL}/api/Common/login`, { Email, password })
-  //         .pipe(map(user => {
-  //             debugger;
-  //             console.log(user);
-  //             // store user details and jwt token in local storage to keep user logged in between page refreshes
-  //             localStorage.setItem('currentUser', JSON.stringify(user));
-
-  //             this.currentUserSubject.next(user);
-
-  //             return user;
-  //         }));
-  // }
 
 
 

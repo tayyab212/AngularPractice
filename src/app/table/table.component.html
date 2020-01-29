@@ -11,13 +11,18 @@
                 <td>Last Name</td>
                 <td>Email</td>
                 <td>Country</td>
+              <td>Action</td>
             </tr>
-            <tr *ngFor="let u of User | async ;let i=index">
+            <tr *ngFor="let u of Users  | async ;let i=index">
                 <td>{{i}}</td>
                 <td>{{u.fname}}</td>
                 <td>{{u.lname}}</td>
                 <td>{{u.email}}</td>
+                <td><Button (click)="getUsera(u)">Edit</Button></td>
             </tr>
         </table>
     </div>
 </div>
+
+
+<td><Button (click)="getUsera(1)">Edit</Button></td>

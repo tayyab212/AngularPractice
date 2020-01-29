@@ -7,14 +7,14 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'RoutingPipe';
-IsLogged :boolean;
+  IsLogged: boolean;
 
-  constructor(){
+  constructor() {
 
-    if(localStorage.getItem("currentUser") =='undefined'  || localStorage.getItem("currentUser") ==null  ){
-  this.IsLogged =false;
-    }else{
-  this.IsLogged =true; 
+    if (localStorage.getItem("currentUser") == 'undefined' || localStorage.getItem("currentUser") == null) {
+      this.IsLogged = false;
+    } else {
+      this.IsLogged = true;
     };
   }
 
@@ -22,7 +22,7 @@ IsLogged :boolean;
     debugger;
     // remove user from local storage to log user out
     localStorage.removeItem('currentUser');
-    this.IsLogged =false;
+    this.IsLogged = false;
   }
 
 

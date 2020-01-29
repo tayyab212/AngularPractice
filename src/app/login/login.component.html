@@ -1,7 +1,7 @@
 <p>login works!</p>
 
 
-<div  [ngClass]="alertClass()" role="alert">
+<div  [ngClass]="alertClass() "  role="alert">
    <div *ngIf="Valid==0">Email or Password is incorrect.</div> 
    <div *ngIf="Valid==1">Congratulations, Successfully login.</div> 
   </div>

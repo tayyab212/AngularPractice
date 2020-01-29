@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { RegistrationService } from '../registration.service';
 import { CommonService } from '../common.service';
+import { Observable } from 'rxjs';
+import { IUser } from '../Interface/user';
 
 @Component({
   selector: 'app-table',
@@ -10,7 +12,7 @@ import { CommonService } from '../common.service';
 })
 export class TableComponent implements OnInit {
 
-  public User =[];
+  public User : Observable<IUser[]>;
   constructor(private _commonservice:CommonService) { }
 
   ngOnInit() {
@@ -18,8 +20,7 @@ export class TableComponent implements OnInit {
   }
 
   getAllUser() {
-    this._commonservice.getAllUser()
-    .subscribe(data=> this.User =data);
+     this.User=this._commonservice.getAllUser();
   }
   
 

@@ -12,7 +12,7 @@
                 <td>Email</td>
                 <td>Country</td>
             </tr>
-            <tr *ngFor="let u of User;let i=index">
+            <tr *ngFor="let u of User | async ;let i=index">
                 <td>{{i}}</td>
                 <td>{{u.fname}}</td>
                 <td>{{u.lname}}</td>

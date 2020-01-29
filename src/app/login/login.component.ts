@@ -11,7 +11,7 @@ import { map } from 'rxjs/operators';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  Valid: boolean;
+  Valid: boolean ;
   login: FormGroup;
 
   constructor(private _commonService: CommonService, private fb: FormBuilder ,private router :Router) {
@@ -40,6 +40,7 @@ debugger;
         debugger;
         console.log(data);
       if(data.isValid ==1){
+
         this.router.navigate(['examples'])
       }else{
         this.Valid =false;
@@ -51,7 +52,7 @@ debugger;
     );
   }
 
-  alertClass(){
+  alertClass() {
     return this.Valid  ?  "alert alert-primary" : "alert alert-danger" ;
   }
 

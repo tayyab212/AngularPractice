@@ -26,6 +26,11 @@ import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.compo
 import { HttpClientModule } from '@angular/common/http';
 import { TableComponent } from './table/table.component';
 import { LoginComponent } from './login/login.component';
+import { LoginguardGuard } from './loginguard.guard';
+import { DeactivateGuard } from './deactivate.guard';
+import { ActivatechildguardGuard } from './activatechildguard.guard';
+import { TableviewDetailComponent } from './tableview-detail/tableview-detail.component';
+import { ChildtableComponent } from './childtable/childtable.component';
 //import { EagerloadingModule } from './ModuleExample/eagerloading/eagerloading.module';
 //import { PersonModule } from './ModuleExample/person/person.module';
 
@@ -54,6 +59,8 @@ import { LoginComponent } from './login/login.component';
     ReactiveForms2Component,
     TableComponent,
     LoginComponent,
+    TableviewDetailComponent,
+    ChildtableComponent,
   ],
   imports: [
     BrowserModule,
@@ -64,7 +71,7 @@ import { LoginComponent } from './login/login.component';
    // PersonModule,
     //EagerloadingModule
   ],
-  providers: [UniServiceService,CustomvalidationService],
+  providers: [UniServiceService,CustomvalidationService,LoginguardGuard ,DeactivateGuard ,ActivatechildguardGuard ],
   bootstrap: [AppComponent]
 })
 export class AppModule { 

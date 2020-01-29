@@ -19,19 +19,24 @@ export class TableComponent implements OnInit {
   constructor(private _commonservice:CommonService) { }
 
   ngOnInit() {
+    debugger;
     this.getAllUser();
     //this.getUsera();
   }
 
   getAllUser() {
+    debugger;
      this.Users=this._commonservice.getAllUser();
+     console.log(this.Users);
   }
 
 
   getUsera(User){
     debugger;
  this._commonservice.getUser(User.id).subscribe(
-   data => {this.User = data},
+   data => {
+    console.log(data);
+       this.User = data;},
    error => {}
  );
   }

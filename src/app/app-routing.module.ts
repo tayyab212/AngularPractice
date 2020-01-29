@@ -16,11 +16,15 @@ import { LoginComponent } from './login/login.component';
 import { PreloadAllModules } from '@angular/router'
 import { CustomePreloadStrategy } from './PreloadingService/Preloading';
 import { CusomePreloadingStrategy } from './PreloadingService/CustomePreloadStrategy';
+import { LoginguardGuard } from './loginguard.guard';
+import { DeactivateGuard } from './deactivate.guard';
+import { ActivatechildguardGuard } from './activatechildguard.guard';
+import { TableviewDetailComponent } from './tableview-detail/tableview-detail.component';
 
 
 const routes: Routes = [
   {
-    path: "admission", children: [
+    path: "admission" , canActivate:[LoginguardGuard] , canActivateChild:[ActivatechildguardGuard] , children: [
       { path: "", component: AdmissionComponent },
       {
         path: "engineering", children: [
@@ -37,11 +41,14 @@ const routes: Routes = [
   },
   {
     path: "examples", children: [
-      { path: "", component: ExamplesComponent },
+      {path:"",component:ExamplesComponent},
       { path: "pipedemo", component: PipeComponent },
       { path: "switchdemo", component: SwitchComponent },
       { path: "uni_Service", component: ServiceComponent },
-      { path: "angular_table", component: TableComponent },
+      { path: "angular_table" ,children:[
+        {path:"" ,component:TableComponent},
+        {path : "Table_Detail/:Id",component:TableviewDetailComponent}
+      ] },
       {
         path: "angular_forms", children: [
           {
@@ -58,7 +65,7 @@ const routes: Routes = [
   },
   { path: "login", component: LoginComponent },
   { path: "eager", loadChildren: 'src/app/ModuleExample/eagerloading/eagerloading.module#EagerloadingModule' },
-  { path: "person", loadChildren: 'src/app/ModuleExample/person/person.module#PersonModule',data :{preload:false}}
+  { path: "person",  loadChildren: 'src/app/ModuleExample/person/person.module#PersonModule',data :{preload:false}}
 ];
 
 @NgModule({

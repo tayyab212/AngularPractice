@@ -10,18 +10,21 @@
                 <td>First Name</td>
                 <td>Last Name</td>
                 <td>Email</td>
-                <td>Country</td>
               <td>Action</td>
             </tr>
             <tr *ngFor="let u of Users  | async ;let i=index">
-                <td>{{i}}</td>
+                <td>{{u.id}}</td>
                 <td>{{u.fname}}</td>
                 <td>{{u.lname}}</td>
                 <td>{{u.email}}</td>
-                <td><Button (click)="getUsera(u)">Edit</Button></td>
+                <td><Button (click)="getUsera(u)">Edit</Button> <button [routerLink]="['Table_Detail',u.id]">Show Detail</button> </td>
             </tr>
         </table>
     </div>
 </div>
 
 {{User | json}}
+<button [routerLink]="['Table_Detail']" [ngClass]="'primary'">Show details</button>
+<button [routerLink]="['childTable']" [ngClass]="'primary'">Show details</button>
+
+

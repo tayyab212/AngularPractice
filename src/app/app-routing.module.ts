@@ -40,8 +40,7 @@ const routes: Routes = [
     ]
   },
   {
-    path: "examples", children: [
-      {path:"",component:ExamplesComponent},
+    path: "examples", canActivateChild:[ActivatechildguardGuard],component:ExamplesComponent , children: [
       { path: "pipedemo", component: PipeComponent },
       { path: "switchdemo", component: SwitchComponent },
       { path: "uni_Service", component: ServiceComponent },

@@ -19,9 +19,11 @@ export class LoginComponent implements OnInit {
       email: ['', [Validators.required, Validators.email]],
       password: ["", [Validators.required]]
     })
-
-    if(typeof(localStorage.getItem("currentUser")) =='undefined'){
-   this.router.navigate(['/']);
+debugger;
+    if(localStorage.getItem("currentUser") =='undefined'  || localStorage.getItem("currentUser") ==null  ){
+  
+  }else{
+    this.router.navigate(['examples']);
   };
 
   

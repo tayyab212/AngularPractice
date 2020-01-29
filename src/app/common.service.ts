@@ -10,8 +10,8 @@ import { map } from 'rxjs/operators';
 })
 export class CommonService {
   _URL = "http://localhost:50038"
-  _urlgetAllUsers = 'http://localhost:5000/api/Common/get_alluser';
-  _urlLogin = 'http://localhost:5000/api/Common/login';
+  _urlgetAllUsers = 'http://localhost:50038/api/Common/get_alluser';
+  _urlLogin = 'http://localhost:50038/api/Common/login';
 
   constructor(private _http: HttpClient) {
   }

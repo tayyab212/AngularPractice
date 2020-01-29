@@ -21,7 +21,7 @@ export class LoginComponent implements OnInit {
     })
 debugger;
     if(localStorage.getItem("currentUser") =='undefined'  || localStorage.getItem("currentUser") ==null  ){
-  
+
   }else{
     this.router.navigate(['examples']);
   };

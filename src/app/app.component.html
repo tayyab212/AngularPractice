@@ -1,6 +1,8 @@
 <h2>University System</h2>
+<div *ngIf="IsLogged">
 
-<button class="btn btn-secondary  float-right"  (click)="logout()">Logout</button> <br /><br />
+    <button class="btn btn-secondary  float-right"  (click)="logout()">Logout</button> <br /><br />
+</div>
 
 <button class="medium" [ngClass]="['bkblack','large']" [routerLink]="['eager']">Eager</button> <br /><br />
 

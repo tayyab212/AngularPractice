@@ -16,13 +16,18 @@ import { ServiceComponent } from './service/service.component';
 import { AngularFormsComponent } from './angular-forms/angular-forms.component';
 import { TemlateDrivenComponent } from './temlate-driven/temlate-driven.component';
 import { ReactiveFormsComponent } from './reactive-forms/reactive-forms.component';
-import { FormsModule }   from '@angular/forms';
+import { FormsModule,ReactiveFormsModule }   from '@angular/forms';
 import { CustomvalidationService } from './services/customvalidation.service';
 
 import { MustMatchDirectiveDirective } from './must-match-directive.directive';
 import { EmailvalidatorDirective  } from './email-validator.directive';
 import { UsernaemDirective } from './usernaem.directive';
-import {ReactiveFormsModule} from '@angular/forms'
+import { ReactiveForms2Component } from './reactive-forms2/reactive-forms2.component';
+import { HttpClientModule } from '@angular/common/http';
+import { TableComponent } from './table/table.component';
+import { LoginComponent } from './login/login.component';
+
+
 
 @NgModule({
   declarations: [
@@ -41,13 +46,17 @@ import {ReactiveFormsModule} from '@angular/forms'
     ReactiveFormsComponent,
     MustMatchDirectiveDirective,
     EmailvalidatorDirective,
-    UsernaemDirective 
+    UsernaemDirective,
+    ReactiveForms2Component,
+    TableComponent,
+    LoginComponent 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    HttpClientModule
   ],
   providers: [UniServiceService,CustomvalidationService],
   bootstrap: [AppComponent]

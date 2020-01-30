@@ -34,10 +34,10 @@ export class ReactiveForms2Component implements OnInit {
     debugger;
     this._register.register(this.regForm.value)
     .subscribe(
-      response => console.log(`success  ${response}`),
+      response => alert(`success  ${response}`) ,
       error=> console.log('error',error)
       );
-      alert("User Successfully Registered, Thank You.");
+     // alert("User Successfully Registered, Thank You.");
       this.regForm.reset();
   }
 
